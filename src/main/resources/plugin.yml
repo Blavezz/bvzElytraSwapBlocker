@@ -1,0 +1,7 @@
+name: bvzElytraSwapBlocker
+version: '${version}'
+
+main: dev.blavez.elytraSwapBlocker.ElytraSwapBlocker
+api-version: 1.21
+load: POSTWORLD
+author: "Blavez"
