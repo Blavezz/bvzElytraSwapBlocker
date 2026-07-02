@@ -14,7 +14,7 @@ class ElytraSwapBlocker : JavaPlugin(), Listener {
     }
 
     @EventHandler
-    fun onPlayerSwapWithEquipmentSlotEvent(event: PlayerSwapWithEquipmentSlotEvent) {
+    fun onPlayerSwapWithEquipmentSlot(event: PlayerSwapWithEquipmentSlotEvent) {
         if (event.itemToSwap.type == Material.ELYTRA || event.itemInHand.type == Material.ELYTRA) event.isCancelled = true
     }
 }
