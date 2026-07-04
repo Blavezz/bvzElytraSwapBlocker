@@ -15,6 +15,16 @@ class ElytraSwapBlocker : JavaPlugin(), Listener {
 
     @EventHandler
     fun onPlayerSwapWithEquipmentSlot(event: PlayerSwapWithEquipmentSlotEvent) {
-        if (event.itemToSwap.type == Material.ELYTRA || event.itemInHand.type == Material.ELYTRA) event.isCancelled = true
+        val swapItem = event.itemToSwap
+        val handItem = event.itemInHand
+
+        if (swapItem.type != Material.AIR) {
+            val swapItemTypeIsElytra = swapItem.type == Material.ELYTRA
+            val handItemTypeIsElytra = handItem.type == Material.ELYTRA
+
+            if (swapItemTypeIsElytra != handItemTypeIsElytra) {
+                event.isCancelled = true
+            }
+        }
     }
 }
